@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to bottom right, #f8f3e7, #e3ded5);
+            color: #4b2e83;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInContainer 1.5s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInContainer {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Bunga Animasi */
+        .flower {
+            position: absolute;
+            width: 80px;
+            opacity: 0;
+            animation: flowerAnimation 1.5s forwards;
+            z-index: 1; /* Agar bunga di atas foto */
+        }
+
+        @keyframes flowerAnimation {
+            0% {
+                transform: translateY(-30px) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+                transform: translateY(0) rotate(5deg);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(-10px) rotate(0deg);
+            }
+        }
+
+        img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            animation: fadeInImage 1.5s ease forwards;
+            opacity: 0;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes fadeInImage {
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: #d97706;
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 0.5em;
+            animation: fadeSlideUp 1.5s ease forwards;
+            opacity: 0;
+            animation-delay: 0.7s;
+        }
+
+        @keyframes fadeSlideUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .bride-groom {
+            font-size: 1.5em;
+            color: #4b2e83;
+            font-weight: 600;
+            margin: 1em 0;
+            animation: fadeInScale 1.8s ease forwards;
+            opacity: 0;
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .date, .location {
+            margin: 1em 0;
+            font-size: 1.1em;
+            font-style: italic;
+            color: #6b4d9b;
+            opacity: 0;
+            animation: fadeInText 1.8s ease forwards;
+            animation-delay: 1.2s;
+        }
+
+        .location {
+            animation-delay: 1.5s;
+        }
+
+        @keyframes fadeInText {
+            0% { opacity: 0; transform: translateX(-15px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        .rsvp {
+            margin-top: 2em;
+            color: #d97706;
+            font-size: 1.2em;
+            animation: fadeInText 2s ease forwards;
+            animation-delay: 1.8s;
+            opacity: 0;
+        }
+
+        .map {
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInMap 2s ease forwards;
+            animation-delay: 2.2s;
+        }
+
+        @keyframes fadeInMap {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+        }
+
+        footer {
+            margin-top: 2em;
+            font-size: 0.8em;
+            color: #a99baa;
+            font-style: italic;
+            animation: fadeInFooter 2s ease forwards;
+            opacity: 0;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes fadeInFooter {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Tambahkan gambar pengantin -->
+        <img src="ii.jpg" alt="Foto Pernikahan">
+        
+        <!-- Tambahkan bunga -->
+        <img src="bunga.jpg" alt="Bunga" class="flower" style="top: 30px; left: 20px; animation-delay: 0.2s;">
+        <img src="bunga.jpg" alt="Bunga" class="flower" style="top: 30px; right: 20px; animation-delay: 0.4s;">
+        
+        <h1>Undangan Pernikahan</h1>
+        <p>Dengan penuh rasa syukur dan cinta, kami mengundang Anda untuk hadir di acara pernikahan kami.</p>
+        
+        <p class="bride-groom">John Doe & Jane Smith</p>
+        
+        <div class="date">
+            <p>Sabtu, 20 Januari 2024</p>
+            <p>Pukul 10:00 WIB</p>
+        </div>
+        
+        <div class="location">
+            <p>Hotel Indah Sejahtera</p>
+            <p>Jl. Kebahagiaan No.123, Jakarta</p>
+        </div>
+        
+        <p class="rsvp">RSVP via WhatsApp: 0812-3456-7890</p>
+
+        <!-- Tambahkan Lokasi Google Maps -->
+        <div class="map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.3401051079785!2d-122.08424968439943!3d37.42199937982592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5e3d4adf0b9%3A0x8184ec1d4974c4d!2sGoogleplex!5e0!3m2!1sid!2sid!4v1601962936954!5m2!1sid!2sid" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <footer>© 2024 - Dengan Cinta, John & Jane</footer>
+    </div>
+</body>
+</html>
